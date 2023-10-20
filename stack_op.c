@@ -47,11 +47,12 @@ void print_stack(stack_t **stack, unsigned int line_num)
  * pop_t - add a node to stack.
  * @stack: pointer to a pointer to the top of node.
  * line_num: Integer representing the line number of opcode.
- * 
+ *
  */
 void pop_t(stack_t **stack, unsigned int line num)
 {
 	stack_t *i;
+
 	if (stack == NULL || *stack == NULL)
 		more_err(7, line_num);
 	i = *stack;
