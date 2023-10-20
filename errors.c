@@ -12,7 +12,7 @@
  * (7) => When the stack it empty for pop.
  * (8) => When stack is too short for operation.
  */
-void err(int error_code, ...)
+void error(int error_code, ...)
 {
 	va_list ag;
 	char *op;

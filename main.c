@@ -1,4 +1,4 @@
-#include "monty"
+#include "monty.h"
 
 stack_t *head = NULL;
 
@@ -16,8 +16,8 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	open_file(argv[1]);
-	free_nodes();
+	open_f(argv[1]);
+	free_n();
 	return (0);
 }
 
@@ -32,7 +32,7 @@ stack_t *create_node(int n)
 
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
-		err(4);
+		error(4);
 	node->next = NULL;
 	node->prev = NULL;
 	node->n = n;
@@ -42,7 +42,7 @@ stack_t *create_node(int n)
 /**
  * free_nodes - Frees nodes in the stack.
  */
-void free_nodes(void)
+void free_n(void)
 {
 	stack_t *i;
 
