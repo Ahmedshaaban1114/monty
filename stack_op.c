@@ -69,7 +69,7 @@ void pop_t(stack_t **stack, unsigned int line_num)
  */
 void print_t(stack_t **stack, unsigned int line_num)
 {
-	if (stack == NULL || *stack == NULL)
+	if (stack == NULL || (*stack) == NULL)
 		 more_error(6, line_num);
 	printf("%d\n", (*stack)->n);
 }
