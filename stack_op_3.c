@@ -1,4 +1,4 @@
-#include "monty"
+#include "monty.h"
 
 
 #include "monty.h"
@@ -13,7 +13,7 @@ void mul_node(stack_t **stack, unsigned int line_num)
 	int sum;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		more_err(8, line_num, "mul");
+		more_error(8, line_num, "mul");
 
 	(*stack) = (*stack)->next;
 	sum = (*stack)->n * (*stack)->prev->n;
@@ -34,11 +34,11 @@ void mod_node(stack_t **stack, unsigned int line_num)
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 
-		more_err(8, line_number, "mod");
+		more_error(8, line_num, "mod");
 
 
 	if ((*stack)->n == 0)
-		more_err(9, line_number);
+		more_error(9, line_num);
 	(*stack) = (*stack)->next;
 	sum = (*stack)->n % (*stack)->prev->n;
 	(*stack)->n = sum;

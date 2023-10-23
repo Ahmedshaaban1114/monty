@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * add_stack - adds a node to the stack.
@@ -39,7 +39,7 @@ void print_stack(stack_t **stack, unsigned int line_num)
 	while (i != NULL)
 	{
 		printf("%d\n", i->n);
-		i = i->next
+		i = i->next;
 	}
 }
 
@@ -49,14 +49,14 @@ void print_stack(stack_t **stack, unsigned int line_num)
  * line_num: Integer representing the line number of opcode.
  *
  */
-void pop_t(stack_t **stack, unsigned int line num)
+void pop_t(stack_t **stack, unsigned int line_num)
 {
 	stack_t *i;
 
 	if (stack == NULL || *stack == NULL)
-		more_err(7, line_num);
+		more_error(7, line_num);
 	i = *stack;
-	*stack = i->next
+	*stack = i->next;
 		if (*stack != NULL)
 			(*stack)->prev = NULL;
 	free(i);
@@ -70,6 +70,6 @@ void pop_t(stack_t **stack, unsigned int line num)
 void print_t(stack_t **stack, unsigned int line_num)
 {
 	if (stack == NULL || *stack == NULL)
-		 more_err(6, line_num);
+		 more_error(6, line_num);
 	printf("%d\n", (*stack)->n);
 }
